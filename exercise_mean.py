@@ -12,11 +12,14 @@ for signal in signals:
     # signal is a dictionary with the following structure
     # # 'id' -> unique numeric identifier for the specific signal
     # # 'values' -> array of real numbers 
-    
+
+    number_of_values = len(signal["values"])
+    mean = sum(signal["values"]) / number_of_values
+
     # result is a dictionary with the following structure
     # # 'id' -> unique numeric identifier for the corresponding signal
     # # 'mean' -> arithmetic mean value of the signal
-    result = {}
+    result = {"id":signal["id"], "mean":mean}
     results.append(result)
 
 result_data = {'session': test_id,
